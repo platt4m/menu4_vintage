@@ -1,8 +1,29 @@
 <style>
 
+
+	summary {
+  display: flex;
+}
+
+summary.menu::after {
+  content: '';
+  width: 18px;
+  height: 10px;
+  background: url('https://platt4m.github.io/menu4_vintage/rightarrow.png');
+  background-size: cover;
+  margin-left: .75em;
+  transition: 0.2s;
+}
+
+details.menu[open] > summary.menu::after {
+  transform: rotate(180deg);
+}
+
+
 /* sigh, Safari again */
 summary.menu::-webkit-details-marker {
   display: none;
+  display: flex;
 }
 
 	
@@ -41,7 +62,7 @@ summary.menu::-webkit-details-marker {
   }
 </style>
 
-<details>
+<details class="menu">
 <summary class="menu">Accordion Header</summary>
 <table class="minimalistBlack">
 <tbody>
