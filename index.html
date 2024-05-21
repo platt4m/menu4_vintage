@@ -73,6 +73,25 @@
   </tr>
 </script>
 
+<details class="beverage_menu" 
+  hx-ext="client-side-templates"
+  nunjucks-array-template="nunjucks_template"
+  hx-target="#beverage_rows"
+  hx-trigger="load"
+  hx-get="https://a8qk8fnk.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type%3D%3D%27beverage%27%5D+%7Bname%2C+description%2C+price%2C+image%7D++%7C+order%28order+asc%29"
+>
+
+  <summary class="menu">Accordion Header</summary>
+  <table class="minimalistBlack">
+    <tbody id="beverage_rows">
+      <!-- <tr>
+        <td>cell1_1</td>
+        <td style="text-align:end">cell2_1</td>
+      </tr> -->
+    </tbody>
+  </table>
+</details>
+
 <details class="food_menu" 
   hx-ext="client-side-templates"
   nunjucks-array-template="nunjucks_template"
@@ -91,9 +110,117 @@
     </tbody>
   </table>
 </details>
-<script type="text/javascript">
-// //if (typeof htmx !== "undefined") { 
-//     alert("DYNAMIC HTMX");
-//     htmx.process(document.getElementById('food_menu'));
-// //}
-</script>
+
+<details class="healthy_menu" 
+  hx-ext="client-side-templates"
+  nunjucks-array-template="nunjucks_template"
+  hx-target="#healthy_rows"
+  hx-trigger="load"
+  hx-get="https://a8qk8fnk.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type%3D%3D%27healthy%27%5D+%7Bname%2C+description%2C+price%2C+image%7D++%7C+order%28order+asc%29"
+>
+
+  <summary class="menu">Accordion Header</summary>
+  <table class="minimalistBlack">
+    <tbody id="healthy_rows">
+      <!-- <tr>
+        <td>cell1_1</td>
+        <td style="text-align:end">cell2_1</td>
+      </tr> -->
+    </tbody>
+  </table>
+</details>
+
+<details class="beerother_menu" 
+  hx-ext="client-side-templates"
+  nunjucks-array-template="nunjucks_template"
+  hx-target="#beerother_rows"
+  hx-trigger="load"
+  hx-get="https://a8qk8fnk.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type%3D%3D%27beerother%27%5D+%7Bname%2C+description%2C+price%2C+image%7D++%7C+order%28order+asc%29"
+>
+
+  <summary class="menu">Accordion Header</summary>
+  <table class="minimalistBlack">
+    <tbody id="beerother_rows">
+      <!-- <tr>
+        <td>cell1_1</td>
+        <td style="text-align:end">cell2_1</td>
+      </tr> -->
+    </tbody>
+  </table>
+</details>
+
+<details class="tea_menu" 
+  hx-ext="client-side-templates"
+  nunjucks-array-template="nunjucks_template"
+  hx-target="#tea_rows"
+  hx-trigger="load"
+  hx-get="https://a8qk8fnk.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type%3D%3D%27tea%27%5D+%7Bname%2C+description%2C+price%2C+image%7D++%7C+order%28order+asc%29"
+>
+
+  <summary class="menu">Accordion Header</summary>
+  <table class="minimalistBlack">
+    <tbody id="tea_rows">
+      <!-- <tr>
+        <td>cell1_1</td>
+        <td style="text-align:end">cell2_1</td>
+      </tr> -->
+    </tbody>
+  </table>
+</details>
+
+<details class="cocktail_menu" 
+  hx-ext="client-side-templates"
+  nunjucks-array-template="nunjucks_template"
+  hx-target="#cocktail_rows"
+  hx-trigger="load"
+  hx-get="https://a8qk8fnk.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type%3D%3D%27cocktail%27%5D+%7Bname%2C+description%2C+price%2C+image%7D++%7C+order%28order+asc%29"
+>
+
+  <summary class="menu">Accordion Header</summary>
+  <table class="minimalistBlack">
+    <tbody id="cocktail_rows">
+      <!-- <tr>
+        <td>cell1_1</td>
+        <td style="text-align:end">cell2_1</td>
+      </tr> -->
+    </tbody>
+  </table>
+</details>
+
+<details class="drink_menu" 
+  hx-ext="client-side-templates"
+  nunjucks-array-template="nunjucks_template"
+  hx-target="#drink_rows"
+  hx-trigger="load"
+  hx-get="https://a8qk8fnk.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type%3D%3D%27drink%27%5D+%7Bname%2C+description%2C+price%2C+image%7D++%7C+order%28order+asc%29"
+>
+
+  <summary class="menu">Accordion Header</summary>
+  <table class="minimalistBlack">
+    <tbody id="drink_rows">
+      <!-- <tr>
+        <td>cell1_1</td>
+        <td style="text-align:end">cell2_1</td>
+      </tr> -->
+    </tbody>
+  </table>
+</details>
+
+<details class="wine_menu" 
+  hx-ext="client-side-templates"
+  nunjucks-array-template="nunjucks_template"
+  hx-target="#wine_rows"
+  hx-trigger="load"
+  hx-get="https://a8qk8fnk.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type%3D%3D%27wine%27%5D+%7Bname%2C+description%2C+price%2C+image%7D++%7C+order%28order+asc%29"
+>
+
+  <summary class="menu">Accordion Header</summary>
+  <table class="minimalistBlack">
+    <tbody id="wine_rows">
+      <!-- <tr>
+        <td>cell1_1</td>
+        <td style="text-align:end">cell2_1</td>
+      </tr> -->
+    </tbody>
+  </table>
+</details>
