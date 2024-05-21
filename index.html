@@ -1,77 +1,93 @@
 <style>
+  summary {
+    display: flex;
+  }
+
+  summary.menu::after {
+    content: '';
+    width: 0.7em;
+    height: 0.8em;
+    background: url('https://platt4m.github.io/menu4_vintage/rightarrow.png');
+    background-size: cover;
+    margin-left: .75em;
+    transition: 0.2s;
+    /* line-height: 2.875; */
+    margin-top: 0.65em;
+  }
+
+  details.menu[open]>summary.menu::after {
+    transform: rotate(90deg);
+  }
 
 
-	summary {
-  display: flex;
-}
-
-summary.menu::after {
-	content: '';
-	width: 0.7em;
-	height: 0.8em;
-	background: url('https://platt4m.github.io/menu4_vintage/rightarrow.png');
-	background-size: cover;
-	margin-left: .75em;
-	transition: 0.2s;
-	/* line-height: 2.875; */
-	margin-top: 0.65em;
-}
-
-details.menu[open] > summary.menu::after {
-  transform: rotate(90deg);
-}
+  /* sigh, Safari again */
+  summary.menu::-webkit-details-marker {
+    display: none;
+    display: flex;
+  }
 
 
-/* sigh, Safari again */
-summary.menu::-webkit-details-marker {
-  display: none;
-  display: flex;
-}
-
-	
   summary.menu {
-	  list-style: none;
-		font-family: 'Source Sans Pro', sans-serif;
-		letter-spacing: 0.025rem;
+    list-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 0.025rem;
     font-size: 1em;
     line-height: 1.875;
-		text-align: start;
-		font-weight: bold;
-		border-bottom: 2px solid gray;
-	}
-  
+    text-align: start;
+    font-weight: bold;
+    border-bottom: 2px solid gray;
+  }
+
   table.minimalistBlack {
     width: 100%;
     text-align: left;
     border-collapse: collapse;
   }
+
   table.minimalistBlack tr {
     border-bottom: 1px solid #ccc;
   }
-  table.minimalistBlack td, table.minimalistBlack th {
+
+  table.minimalistBlack td,
+  table.minimalistBlack th {
     padding: 5px 4px;
-    
+
     color: #474747;
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0.025rem;
     font-size: 1em;
     line-height: 1.875;
     font-weight: 200;
-    
+
   }
+
   table.minimalistBlack tfoot td {
     font-size: 14px;
   }
 </style>
 
-<details class="menu">
-<summary class="menu">Accordion Header</summary>
-<table class="minimalistBlack">
-<tbody>
-<tr>
-<td>cell1_1</td>
-<td style="text-align:end">cell2_1</td>
-</tr>
-</tbody>
-</table>
+<script id="nunjucks_template" type="text/template">
+  <tr>
+    <td>cell1_1</td>
+    <td style="text-align:end">cell2_1</td>
+  </tr>
+</script>
+
+<details class="menu" 
+  hx-ext="client-side-templates"
+  nunjucks-array-template="nunjucks_template"
+  hx-target="#food_rows"
+  hx-trigger="load"
+  hx-get="https://a8qk8fnk.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type%3D%3D%27food%27%5D+%7Bname%2C+description%2C+price%2C+image%7D++%7C+order%28order+asc%29"
+>
+
+  <summary class="menu">Accordion Header</summary>
+  <table class="minimalistBlack">
+    <tbody id="food_rows">
+      <!-- <tr>
+        <td>cell1_1</td>
+        <td style="text-align:end">cell2_1</td>
+      </tr> -->
+    </tbody>
+  </table>
 </details>
