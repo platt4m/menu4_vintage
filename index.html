@@ -73,7 +73,7 @@
   </tr>
 </script>
 
-<details class="menu" 
+<details class="food_menu" 
   hx-ext="client-side-templates"
   nunjucks-array-template="nunjucks_template"
   hx-target="#food_rows"
@@ -91,3 +91,8 @@
     </tbody>
   </table>
 </details>
+<script type="text/javascript">
+if (typeof htmx !== "undefined") { 
+    htmx.process(document.getElementById('food_menu'));
+}
+</script>
