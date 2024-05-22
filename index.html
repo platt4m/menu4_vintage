@@ -74,7 +74,7 @@
     {% else %}
       <td>{{r.name}}</td>
     {% endif %}    
-    <td style="text-align:end">{{"" if (r.isgroup or r.isgroup=="") else ( [r.price | fixed, " €"] | join  ) }}</td>
+    <td style="text-align:end">{{"" if (r.isgroup or r.price==null) else ( [r.price | fixed, " €"] | join  ) }}</td>
   </tr>
   {% endfor %}
 </script>
