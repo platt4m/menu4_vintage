@@ -12,12 +12,11 @@
     margin-left: .75em;
     transition: 0.2s;
     /* line-height: 2.875; */
-    margin-top: 0.65em;
-    transform: rotate(90deg);
+    margin-top: 0.65em;    
   }
 
   details.menu[open]>summary.menu::after {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
   }
 
 
@@ -99,7 +98,7 @@
   </table>
 </details>
 
-<details class="food_menu" 
+<details class="food_menu menu" 
   hx-ext="client-side-templates"
   nunjucks-array-template="nunjucks_template"
   hx-target="#food_rows"
@@ -118,7 +117,7 @@
   </table>
 </details>
 
-<details class="healthy_menu" 
+<details class="healthy_menu menu" 
   hx-ext="client-side-templates"
   nunjucks-array-template="nunjucks_template"
   hx-target="#healthy_rows"
@@ -137,7 +136,7 @@
   </table>
 </details>
 
-<details class="beerother_menu" 
+<details class="beerother_menu menu" 
   hx-ext="client-side-templates"
   nunjucks-array-template="nunjucks_template"
   hx-target="#beerother_rows"
@@ -156,7 +155,7 @@
   </table>
 </details>
 
-<details class="tea_menu" 
+<details class="tea_menu menu" 
   hx-ext="client-side-templates"
   nunjucks-array-template="nunjucks_template"
   hx-target="#tea_rows"
@@ -175,7 +174,7 @@
   </table>
 </details>
 
-<details class="cocktail_menu" 
+<details class="cocktail_menu menu" 
   hx-ext="client-side-templates"
   nunjucks-array-template="nunjucks_template"
   hx-target="#cocktail_rows"
@@ -194,7 +193,7 @@
   </table>
 </details>
 
-<details class="drink_menu" 
+<details class="drink_menu menu" 
   hx-ext="client-side-templates"
   nunjucks-array-template="nunjucks_template"
   hx-target="#drink_rows"
@@ -213,7 +212,7 @@
   </table>
 </details>
 
-<details class="wine_menu" 
+<details class="wine_menu menu" 
   hx-ext="client-side-templates"
   nunjucks-array-template="nunjucks_template"
   hx-target="#wine_rows"
