@@ -69,8 +69,12 @@
 <script id="nunjucks_template" type="text/template">
   {% for r in (data.result | menugrouping) %}
   <tr>
-    <td>{{r.name}}</td>
-    <td style="text-align:end">{{r.price}}</td>
+    {% if r.isgroup %}
+      <td style="font-weight: bold; font-size: 0.9em;">{{r.name}}</td>
+    {% else %}
+      <td>{{r.name}}</td>
+    {% endif %}    
+    <td style="text-align:end">{{r.isgroup ? "" : r.price}}</td>
   </tr>
   {% endfor %}
 </script>
