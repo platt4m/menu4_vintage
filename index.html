@@ -66,11 +66,32 @@
   }
 </style>
 
+<script type="text/javascript">
+  var env = new nunjucks.Environment();
+  env.addFilter('menugrouping', function(menuJsonSrc) {
+    let rslt = [];
+    for(let e of menuJsonSrc) {
+      let index = rslt.findIndex((item) => item.name == e.subcategory && item.isgroup);
+      if(index<=0) {
+        rslt.push({
+          isgroup: true,
+          name: e.subcategory,
+          subcategory: "",
+          description: "",
+          price: -1,          
+        })
+      }
+      rslt.push({isgroup: false, ...e});
+    }
+    return rslt;
+  });
+</script>
+
 <script id="nunjucks_template" type="text/template">
-  {% for r in data.result %}
+  {% for r in (data.result | menugrouping) %}
   <tr>
-    <td>{{r.title}}</td>
-    <td style="text-align:end">r.price</td>
+    <td>{{r.name}}</td>
+    <td style="text-align:end">{{r.price}}</td>
   </tr>
   {% endfor %}
 </script>
