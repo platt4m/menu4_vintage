@@ -67,10 +67,12 @@
 </style>
 
 <script id="nunjucks_template" type="text/template">
+  {% for r in data.results %}
   <tr>
-    <td>cell1_1</td>
-    <td style="text-align:end">cell2_1</td>
+    <td>{{r.title}}</td>
+    <td style="text-align:end">r.price</td>
   </tr>
+  {% endfor %}
 </script>
 
 <details class="beverage_menu" 
@@ -159,7 +161,7 @@
 
   <summary class="menu">Accordion Header</summary>
   <table class="minimalistBlack">
-    <tbody id="tea_rows">
+    <tbody id="tea_rows">      
       <!-- <tr>
         <td>cell1_1</td>
         <td style="text-align:end">cell2_1</td>
