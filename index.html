@@ -61,6 +61,12 @@
 
   }
 
+  table.minimalistBlack td .description {
+    font-size: 0.7em;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
   table.minimalistBlack tfoot td {
     font-size: 14px;
   }
@@ -70,9 +76,9 @@
   {% for r in (data.result | menugrouping) %}
   <tr>
     {% if r.isgroup %}
-      <td style="font-weight: bold; font-size: 0.9em;"><span>{{r.name}}</span><br/><span>{{r.description}}</span></td>
+      <td style="font-weight: bold; font-size: 0.9em;"><span>{{r.name}}</span><br/><div class="description">{{r.description}}</div></td>
     {% else %}
-      <td><span>{{r.name}}</span><br/><span>{{r.description}}</span></td>
+      <td><span>{{r.name}}</span><br/><div class="description">{{r.description}}</div></td>
     {% endif %}    
     <td style="text-align:end">{{"" if (r.isgroup or r.price==null) else ( [r.price | fixed, "€"] | join  ) }}</td>
   </tr>
