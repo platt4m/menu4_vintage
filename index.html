@@ -70,9 +70,9 @@
   {% for r in (data.result | menugrouping) %}
   <tr>
     {% if r.isgroup %}
-      <td style="font-weight: bold; font-size: 0.9em;">{{r.name}}</td>
+      <td style="font-weight: bold; font-size: 0.9em;"><span>{{r.name}}</span><br/><span>{{r.description}}</span></td>
     {% else %}
-      <td>{{r.name}}</td>
+      <td><span>{{r.name}}</span><br/><span>{{r.description}}</span></td>
     {% endif %}    
     <td style="text-align:end">{{"" if (r.isgroup or r.price==null) else ( [r.price | fixed, "€"] | join  ) }}</td>
   </tr>
